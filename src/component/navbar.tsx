@@ -31,7 +31,7 @@ export default function Navbar() {
 
                     <div className="offcanvas-body d-flex flex-column justify-content-between">
                         <div>
-                            <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3">
+                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li className="nav-item">
                                     {/* <a className="nav-link active" aria-current="page" href="#">ПРОЕКТИ</a> */}
                                     <Link href="/" className={router.pathname === '/' ? 'nav-link active' : 'nav-link'}>ПРОЕКТИ</Link>
