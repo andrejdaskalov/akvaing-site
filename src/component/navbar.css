@@ -1,4 +1,9 @@
-
+:root{
+    --logo-color: #000;
+    --logo-dark-color: #fff;
+    /* --bs-dark-rgb: #353F4F; */
+    /* --bs-body-bg: var(--bs-body-bg); */
+}
 
 nav > div > button {
     /* width: auto; */
@@ -8,6 +13,7 @@ nav > div > button {
 .navbar-nav > li {
     font-size: 3rem;
     font-weight: bolder;
+    text-align: center;
 }
 
 .logos-navbar {
@@ -17,7 +23,13 @@ nav > div > button {
 
 .logos-navbar > img {
    width: 100px;
+
 }
+
+.logos-navbar > img > path {
+    fill: var(--logo-color);
+}
+
 
 @media screen and (min-width: 768px) {
     nav {
