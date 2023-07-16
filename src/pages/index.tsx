@@ -53,14 +53,28 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={'container'}>
+            <main className={'container d-flex flex-column justify-content-around'}>
                 <div className='mt-3'>
                     <h2 className='h2 text-dark'>АРХИТЕКТУРА</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
                         {posts.map(post => (
                             <div className='card project-card flex-shrink-0 me-1' key={post.id}>
                                 <img src={post.imageUrl} className='card-img' alt={post.title} />
-                                <div className='card-img-overlay'>
+                                <div className='card-img-overlay d-flex flex-column justify-content-end'>
+                                    <h5 className='card-title'>{post.title}</h5>
+                                    <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className='mt-3'>
+                    <h2 className='h2 text-dark'>ХИДРОТЕХНИКА</h2>
+                    <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
+                        {posts.map(post => (
+                            <div className='card project-card flex-shrink-0 me-1' key={post.id}>
+                                <img src={post.imageUrl} className='card-img' alt={post.title} />
+                                <div className='card-img-overlay d-flex flex-column justify-content-end'>
                                     <h5 className='card-title'>{post.title}</h5>
                                     <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
