@@ -1,0 +1,11 @@
+.project-card{
+    width: fit-content;
+}
+.project-card img{
+    height: 200px;
+    width: auto;
+}
+
+/* .card-container > *{
+    display: inline-block;
+} */

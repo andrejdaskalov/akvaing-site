@@ -3,18 +3,30 @@ import { use, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Link from "next/link";
+// import { Offcanvas } from "bootstrap";
+
 
 export default function Navbar() {
 
+
+
     useEffect(() => {
-        document !== undefined ? require('bootstrap/dist/js/bootstrap.min.js') : null;
+        if (document !== undefined) {
+            require('bootstrap/dist/js/bootstrap.min.js');
+            // import('bootstrap').then(bootstrap => {
+            //     let instance = bootstrap.Offcanvas.getInstance('#offcanvasDarkNavbar');
+            //     instance?.hide();
+            // })
+        }
     }, [Router.events])
 
     const router = useRouter();
 
+  
+
     // TODO: change all links to <Link> component after i set up the routes
     return (
-        <nav className="navbar navbar-dark bg-dark fixed-left" >
+        <nav className="navbar navbar-dark bg-dark fixed-left fixed-top" >
             <div className="d-flex flex-column align-items-center justify-content-start">
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
@@ -38,7 +50,7 @@ export default function Navbar() {
                                 </li>
                                 <li className="nav-item">
                                     {/* <a className="nav-link" href="#">КОНТАКТ</a> */}
-                                    <Link href="/kontakt" className={router.pathname === '/kontakt' ? 'nav-link active' : 'nav-link'}>КОНТАКТ</Link>
+                                    <Link href="/kontakt" className={router.pathname === '/kontakt' ? 'nav-link active' : 'nav-link'} >КОНТАКТ</Link>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,7 +77,7 @@ export default function Navbar() {
                         <div className="d-flex flex-row justify-content-center logos-navbar" >
                             <img src="/logo-white.svg" alt="logo" className="img-fluid" />
                             <img src="/AI-logo_white.svg" alt="logo" className="img-fluid" />
-                            <svg href="/logo-white.svg" className="img-fluid" xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" viewBox="0 0 16 16"/>
+                            {/* <svg href="/logo-white.svg" className="img-fluid" xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" viewBox="0 0 16 16"/> */}
 
                         </div>
                     </div>
