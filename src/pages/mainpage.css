@@ -14,8 +14,8 @@
     border-radius: 0;
 }
 
-.card-container {
-    padding: 1.5rem;
+.card-container{
+    width: 100vw;
 }
 
 .card-img-overlay{
@@ -31,4 +31,12 @@
 .project-card:hover .card-img-overlay{
     /* visibility: visible; */
     opacity: 1;
+}
+@media screen and (min-width: 768px) {
+
+    .card-container {
+        padding: 1.5rem;
+        width: calc(100vw - 4rem);
+        
+    }
 }
