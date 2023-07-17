@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/component/navbar'
+import Repository from '../repository/repo'
 
 
 
@@ -10,38 +11,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-    const posts = [
-        {
-            id: 1,
-            title: 'Проект 1',
-            imageUrl: '/images/proekt1.png'
-        },
-        {
-            id: 2,
-            title: 'Проект 2',
-            imageUrl: '/images/proekt1.png'
-        },
-        {
-            id: 3,
-            title: 'Проект 3',
-            imageUrl: '/images/proekt1.png'
-        },
-        {
-            id: 4,
-            title: 'Проект 4',
-            imageUrl: '/images/proekt1.png'
-        },
-        {
-            id: 5,
-            title: 'Проект 5',
-            imageUrl: '/images/proekt1.png'
-        },
-        {
-            id: 6,
-            title: 'Проект 6',
-            imageUrl: '/images/proekt1.png'
-        }
-    ]
+    const repository = new Repository()
+    const posts = repository.getAllPosts()
 
 
     return (
@@ -63,6 +34,7 @@ export default function Home() {
                                 <div className='card-img-overlay d-flex flex-column justify-content-end'>
                                     <h5 className='card-title'>{post.title}</h5>
                                     <p className='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href={'/project/'+ post.id} className="btn btn-outline-secondary stretched-link">Детали</a>
                                 </div>
                             </div>
                         ))}

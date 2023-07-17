@@ -122,21 +122,17 @@ h2 {
 
 ::-webkit-scrollbar-track {
     background-color: #42424260;
-    /* border-radius: 90px; */
     margin: 1px;
-}
-
-::-webkit-scrollbar-track:hover {
-    width: 10px;
-    height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #424242;
-    /* border-radius: 90px; */
+    outline: 5px solid transparent;
+    transition: all ease-in-out 1s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #3a3a3a;
     height: 15px;
+    outline: 5px solid #424242;
 }
