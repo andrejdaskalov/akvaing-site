@@ -86,6 +86,16 @@ body {
     background: url(/architectDeepBlue.svg) repeat;
     background-color: white;
 }
+
+main.special-scroll {
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+ main.special-scroll .image-row {
+    overflow: hidden;
+}
 main{
     margin-top: 80px;
     min-height: 100vh;
@@ -112,6 +122,14 @@ h2 {
     main {
         margin-top: auto;
         margin-left: 80px !important;
+    }
+
+    main.special-scroll{
+        height: 100vh !important;
+        overflow-y: hidden;
+    }
+    main.special-scroll .image-row {
+        overflow: scroll;
     }
 }
 
