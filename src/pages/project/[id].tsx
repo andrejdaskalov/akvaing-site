@@ -1,6 +1,15 @@
 import Repository from "@/repository/repo";
 import Post from "@/repository/Post"
 import { useRouter } from "next/router";
+import LightGallery from 'lightgallery/react';
+
+// import styles
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 
 export default function Project() {
@@ -12,7 +21,7 @@ export default function Project() {
     if (!post) return <h1>Post not found</h1>
     return (
         <main className="special-scroll">
-           
+
             <div className='row mt-5'>
 
                 <div className="col-md-1">
@@ -25,11 +34,18 @@ export default function Project() {
                     <p className="text-dark fs-3 fw-normal">КОНЦЕПТ: {post.concept}</p>
                 </div>
                 <div className="col-md-6 image-row overflow-auto">
-                    {
-                        post.imageUrls.map((url) => (
-                            <img src={url} className='img-fluid mb-2' alt={post.title} />
-                        ))
-                    }
+                    <LightGallery
+                        speed={500}
+                        plugins={[lgThumbnail, lgZoom]}
+                    >
+                        {
+                            post.imageUrls.map((url) => (
+                                <a href={url}>
+                                    <img src={url} className='img-fluid mb-2' alt={post.title} />
+                                </a>
+                            ))
+                        }
+                    </LightGallery>
                 </div>
 
             </div>

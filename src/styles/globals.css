@@ -92,6 +92,12 @@ main.special-scroll {
     /* overflow-y: scroll;
     overflow-x: hidden; */
 }
+.image-row img{
+    transition: all ease-in-out 0.2s;
+}
+.image-row img:hover{
+    transform: scale(1.1);
+}
 
  /* main.special-scroll .image-row {
     overflow: hidden;
