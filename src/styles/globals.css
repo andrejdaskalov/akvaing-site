@@ -89,16 +89,16 @@ body {
 
 main.special-scroll {
     height: auto;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
 }
 
- main.special-scroll .image-row {
+ /* main.special-scroll .image-row {
     overflow: hidden;
-}
+} */
 main{
     margin-top: 80px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 a {
@@ -126,10 +126,11 @@ h2 {
 
     main.special-scroll{
         height: 100vh !important;
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
     }
     main.special-scroll .image-row {
-        overflow: scroll;
+        height: calc(100vh - 3rem);
+        /* overflow: scroll; */
     }
 }
 

@@ -24,7 +24,7 @@ export default function Project() {
                     <p className="text-dark fs-3 fw-normal">ДАТУМ: {post.date?.toDateString()}</p>
                     <p className="text-dark fs-3 fw-normal">КОНЦЕПТ: {post.concept}</p>
                 </div>
-                <div className="col-md-6 image-row">
+                <div className="col-md-6 image-row overflow-auto">
                     {
                         post.imageUrls.map((url) => (
                             <img src={url} className='img-fluid mb-2' alt={post.title} />
