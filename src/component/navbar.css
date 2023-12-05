@@ -10,7 +10,7 @@ nav > div > button {
     border:none !important;
 }
 
-.navbar-nav > li {
+.nav-item {
     font-size: 2rem;
     font-weight: 200;
     text-align: center;

@@ -40,7 +40,7 @@ export default function Project() {
                     >
                         {
                             post.imageUrls.map((url) => (
-                                <a href={url}>
+                                <a key={url} href={url}>
                                     <img src={url} className='img-fluid mb-2' alt={post.title} />
                                 </a>
                             ))
