@@ -43,20 +43,20 @@ export default function AkvaingNavbar() {
                             
                                 <Nav className="flex-grow-1 pe-3" activeKey={router.pathname}>
                                     <Nav.Item>
-                                        <Link href="/" className="nav-link">ПРОЕКТИ</Link>
+                                        <Link href="/" onClick={handleClose} className="nav-link">ПРОЕКТИ</Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Link href="/kontakt" className="nav-link">КОНТАКТ</Link>
+                                        <Link href="/kontakt" onClick={handleClose} className="nav-link">КОНТАКТ</Link>
                                     </Nav.Item>
                                     <NavDropdown title="ЗА НАС" id="basic-nav-dropdown" className="nav-link" menuVariant="dark">
                                         <NavDropdown.Item >
-                                            <Nav.Link href="/zanas" className="nav-link">МИСИЈА</Nav.Link>
+                                            <Nav.Link href="/zanas" onClick={handleClose} className="nav-link">МИСИЈА</Nav.Link>
                                         </NavDropdown.Item>
                                         <NavDropdown.Item >
-                                            <Nav.Link href="/zanas" className="nav-link">СЕРТИФИКАТИ</Nav.Link>
+                                            <Nav.Link href="/zanas" onClick={handleClose} className="nav-link">СЕРТИФИКАТИ</Nav.Link>
                                         </NavDropdown.Item>
                                         <NavDropdown.Item >
-                                            <Nav.Link href="/zanas" className="nav-link">ДЕЈНОСТ</Nav.Link>                                        
+                                            <Nav.Link href="/zanas" onClick={handleClose} className="nav-link">ДЕЈНОСТ</Nav.Link>                                        
                                         </NavDropdown.Item>
                                     </NavDropdown>    
                                 </Nav>
