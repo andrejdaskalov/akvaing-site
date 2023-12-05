@@ -8,7 +8,7 @@ class Repository {
             imageUrls: ['/images/proekt1.png'],
             location: 'Москва',
             purpose: 'Для дома',
-            date: new Date('2020-01-01'),
+            date: new Date('2020-01-01').toLocaleDateString(["en-US","mk-MK"]),
             concept: 'Концепт 1'
         },
         {
@@ -17,7 +17,7 @@ class Repository {
             imageUrls: ['/images/proekt1.png'],
             location: 'Москва',
             purpose: 'Для дома',
-            date: new Date('2020-01-01'),
+            date: new Date('2020-01-01').toLocaleDateString(["en-US","mk-MK"]),
             concept: 'Концепт 1'
         },
         {
@@ -26,7 +26,7 @@ class Repository {
             imageUrls: ['/images/proekt1.png'],
             location: 'Москва',
             purpose: 'Для дома',
-            date: new Date('2020-01-01'),
+            date: new Date('2020-01-01').toLocaleDateString(["en-US","mk-MK"]),
             concept: 'Концепт 1'
         },
         {
@@ -35,7 +35,7 @@ class Repository {
             imageUrls: ['/images/proekt1.png'],
             location: 'Москва',
             purpose: 'Для дома',
-            date: new Date('2020-01-01'),
+            date: new Date('2020-01-01').toLocaleDateString(["en-US","mk-MK"]),
             concept: 'Концепт 1'
         },
         {
@@ -44,7 +44,7 @@ class Repository {
             imageUrls: ['/images/proekt1.png'],
             location: 'Москва',
             purpose: 'Для дома',
-            date: new Date('2020-01-01'),
+            date: new Date('2020-01-01').toLocaleDateString(["en-US","mk-MK"]),
             concept: 'Концепт 1'
         },
         {
@@ -62,7 +62,7 @@ class Repository {
             ],
             location: 'Москва',
             purpose: 'Для дома',
-            date: new Date('2020-01-01'),
+            date: new Date('2020-01-01').toLocaleDateString(["en-US","mk-MK"]),
             concept: 'Концепт 1'
         }
     ]

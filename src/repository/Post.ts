@@ -6,10 +6,10 @@ class Post {
     public imageUrls: string[]
     public location?: string
     public purpose?: string
-    public date?: Date
+    public date?: string
     public concept?: string
 
-    constructor(id: number, title: string, imageUrls: string[], location?: string, purpose?: string, date?: Date, concept?: string) {
+    constructor(id: number, title: string, imageUrls: string[], location?: string, purpose?: string, date?: string, concept?: string) {
         this.id = id
         this.title = title
         this.imageUrls = imageUrls
