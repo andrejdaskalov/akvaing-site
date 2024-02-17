@@ -11,23 +11,25 @@ import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 
+
 export async function getStaticPaths() {
+    const locales = ['mk', 'en']
     const repository = new Repository()
-    const posts = repository.getAllPosts()
-    const paths = posts.map((post) => ({
-        params: { id: post.id.toString() }
-    }))
+    const paths = locales.flatMap((locale) => {
+        const posts = repository.getAllPosts(locale)
+        return posts.map((post) => ({ params: { id: post.id.toString(), locale: locale }}))
+    })
     return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }: { params: { id: number } }) {
+export async function getStaticProps({ params }: { params: { id: number, locale : string }}) {
     const repository = new Repository()
-    const post = repository.getPostById(Number(params.id))
+    const post = repository.getPostById(Number(params.id), params.locale)
     return { props: { post } }
 }
 
 
-export default function Project({ post }: { post: Post}) {
+export default function Project({ post }: { post: Post }) {
     // const router = useRouter()
     // const id = Number(router.query.id)
 

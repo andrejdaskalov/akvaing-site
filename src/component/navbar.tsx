@@ -48,7 +48,13 @@ export default function AkvaingNavbar() {
                                     <Nav.Item>
                                         <Link href="/kontakt" onClick={handleClose} className="nav-link">КОНТАКТ</Link>
                                     </Nav.Item>
-                                    <NavDropdown title="ЗА НАС" id="basic-nav-dropdown" className="nav-link" menuVariant="dark">
+                                    <NavDropdown 
+                                        title="ЗА НАС" 
+                                        id="basic-nav-dropdown" 
+                                        className="nav-link" 
+                                        menuVariant="dark"
+                                        style={{transition:"all ease-in-out 0.3s"}}
+                                        >
                                         <NavDropdown.Item >
                                             <Nav.Link href="/zanas" onClick={handleClose} className="nav-link">МИСИЈА</Nav.Link>
                                         </NavDropdown.Item>

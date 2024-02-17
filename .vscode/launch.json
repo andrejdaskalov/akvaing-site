@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Next.js Export",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/next",
+            "runtimeArgs": [
+                "build",
+                "&&",
+                "${workspaceRoot}/node_modules/.bin/next",
+                "export"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
