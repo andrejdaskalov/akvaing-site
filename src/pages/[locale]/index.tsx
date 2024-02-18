@@ -8,18 +8,38 @@ import { useRouter } from 'next/router'
 import Post from '../../component/card'
 import Card from '../../component/card'
 
-import { useTranslation } from 'next-export-i18n'
+// import { useTranslation } from 'next-export-i18n'
+import Intl from '../../../i18n/intl'
 
 
 
-const inter = Inter({ subsets: ['latin'] })
+//const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export async function getStaticPaths() {
+    const locales = ['mk', 'en']
+    const paths = locales.map((locale) => ({ params: { locale: locale }}))
+    console.log("paths: ", paths)
+    return { paths, fallback: false}
+}
+
+export async function getStaticProps({ params }: { params: { locale : string }}) {
+    // const translation = new Intl();
+    // const t  = (key: string) => translation.getTranslation(params.locale, key)
+    // console.log("t: ", t)
+    const locale = params.locale
+    console.log("locale: ", locale)
+    return { props: { locale: locale } }
+}
+
+
+export default function Home(props :  {locale: string} ){
+    console.log("props: ", props)
 
     const repository = new Repository()
     const router = useRouter()
-    const posts = repository.getAllPosts(router.locale ? router.locale : 'mk')
-    const { t } = useTranslation()
+    const posts = repository.getAllPosts(props.locale ? props.locale : 'mk')
+    const translation = new Intl();
+    const t  = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);
 
 
     const navigateToProject = (id: number) => {
