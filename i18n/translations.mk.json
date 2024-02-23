@@ -1,5 +1,10 @@
 {
     "company-name" : "АКВА-ИНГ",
     "architecture" : "Архитектура",
-    "hydrotechnics" : "Xидротехника"
+    "hydrotechnics" : "Xидротехника",
+    "nav.projects" : "ПРОЕКТИ",
+    "nav.contact" : "КОНТАКТ",
+    "nav.about" : "ЗА НАС",
+    "nav.mission" : "МИСИЈА",
+    "nav.certificates" : "СЕРТИФИКАТИ"
 }

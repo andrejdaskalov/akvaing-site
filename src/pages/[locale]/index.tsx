@@ -7,13 +7,9 @@ import Repository from '../../repository/repo'
 import { useRouter } from 'next/router'
 import Post from '../../component/card'
 import Card from '../../component/card'
-
-// import { useTranslation } from 'next-export-i18n'
 import Intl from '../../../i18n/intl'
+import { useEffect } from 'react'
 
-
-
-//const inter = Inter({ subsets: ['latin'] })
 
 export async function getStaticPaths() {
     const locales = ['mk', 'en']
@@ -23,9 +19,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { locale : string }}) {
-    // const translation = new Intl();
-    // const t  = (key: string) => translation.getTranslation(params.locale, key)
-    // console.log("t: ", t)
     const locale = params.locale
     console.log("locale: ", locale)
     return { props: { locale: locale } }
@@ -43,8 +36,14 @@ export default function Home(props :  {locale: string} ){
 
 
     const navigateToProject = (id: number) => {
-        router.push('/project/'+ router.locale + id)
+        router.push(props.locale + '/project/'+ id)
     }
+
+    useEffect(() => {
+        if(translation.readLocale() !== props.locale){
+            router.push(props.locale)
+        }
+    }, [])
 
 
     return (
@@ -66,7 +65,7 @@ export default function Home(props :  {locale: string} ){
                     </div>
                 </div>
                 <div className='mt-3'>
-                    <h2 className='h2 text-dark'>{t("hydrotechincs")}</h2>
+                    <h2 className='h2 text-dark'>{t("hydrotechnics")}</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
                         {posts.map(post => (
                             <Card key={post.id} post={post} onClick={() => navigateToProject(post.id)}/>

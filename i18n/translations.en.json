@@ -1,5 +1,10 @@
 {
     "company-name" : "АKVA-ING",
     "architecture" : "Architecture",
-    "hydrotechnics" : "Hydrotechnics"
+    "hydrotechnics" : "Hydrotechnics",
+    "nav.projects" : "PROJECTS",
+    "nav.contact" : "CONTACT",
+    "nav.about" : "ABOUT US",
+    "nav.mission" : "MISSION",
+    "nav.certificates" : "CERTIFICATES"
 }
