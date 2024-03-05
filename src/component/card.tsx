@@ -1,5 +1,5 @@
 import React from 'react'
-import  Post  from '../repository/Post'
+import  Post  from '../model/Post'
 
 
 interface CardProps {

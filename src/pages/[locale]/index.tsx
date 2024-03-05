@@ -3,12 +3,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/component/navbar'
-import Repository from '../../repository/repo'
+import Repository from '../../repository/strapi_repo'
 import { useRouter } from 'next/router'
-import Post from '../../component/card'
+import Post from '../../model/Post'
 import Card from '../../component/card'
 import Intl from '../../../i18n/intl'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 
 export async function getStaticPaths() {
@@ -30,9 +30,16 @@ export default function Home(props :  {locale: string} ){
 
     const repository = new Repository()
     const router = useRouter()
-    const posts = repository.getAllPosts(props.locale ? props.locale : 'mk')
     const translation = new Intl();
     const t  = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);
+    const [posts, setPosts] = useState<Post[]>([])
+
+    useEffect(() => {
+        repository.getAllPosts(props.locale).then(posts => {
+            setPosts(posts)
+        })
+    }, [])
+
 
 
     const navigateToProject = (id: number) => {
@@ -55,8 +62,8 @@ export default function Home(props :  {locale: string} ){
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={'container d-flex flex-column justify-content-around'}>
-                <div className='mt-3'>
+            <main className={'container d-flex flex-column justify-content-between'}>
+                <div className='my-5'>
                     <h2 className='h2 text-dark'>{t("architecture")}</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
                         {posts.map(post => (
@@ -64,7 +71,7 @@ export default function Home(props :  {locale: string} ){
                         ))}
                     </div>
                 </div>
-                <div className='mt-3'>
+                <div className='my-5'>
                     <h2 className='h2 text-dark'>{t("hydrotechnics")}</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
                         {posts.map(post => (

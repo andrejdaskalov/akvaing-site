@@ -1,5 +1,5 @@
-import Repository from "@/repository/repo";
-import Post from "@/repository/Post"
+import Repository from "@/repository/strapi_repo";
+import Post from "@/model/Post"
 import { useRouter } from "next/router";
 import LightGallery from 'lightgallery/react';
 
@@ -16,16 +16,18 @@ export async function getStaticPaths() {
     const locales = ['mk', 'en']
     const repository = new Repository()
     const paths = locales.flatMap((locale) => {
-        const posts = repository.getAllPosts(locale)
-        return posts.map((post) => ({ params: { id: post.id.toString(), locale: locale }}))
+        repository.getAllPosts(locale).then(posts => {
+            return posts.map((post) => ({ params: { id: post.id.toString(), locale: locale } }))
+        })
     })
     return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }: { params: { id: number, locale : string }}) {
+export async function getStaticProps({ params }: { params: { id: number, locale: string } }) {
     const repository = new Repository()
-    const post = repository.getPostById(Number(params.id), params.locale)
-    return { props: { post } }
+    repository.getPostById(Number(params.id), params.locale).then(post => {
+        return { props: { post } }
+    })
 }
 
 
