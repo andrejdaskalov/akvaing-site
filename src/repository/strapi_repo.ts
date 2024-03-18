@@ -1,6 +1,5 @@
 import Post from "../model/Post";
 import axios from "./axios"
-import image_axios from "./image_axios"
 
 class Repository {
 
@@ -57,6 +56,7 @@ class Repository {
         return new Post(
             post.id,
             post.attributes.Title,
+            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.url),
             post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.thumbnail.url),
             post.attributes.Location,
             post.attributes.Purpose,

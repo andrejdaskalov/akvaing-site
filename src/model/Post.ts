@@ -8,7 +8,8 @@ enum PostType {
 class Post {
     public id: number
     public title: string
-    public imageUrls: any
+    public imageUrls: string[]
+    public thumbnailUrls: string[]
     public location?: string
     public purpose?: string
     public date?: string
@@ -21,10 +22,11 @@ class Post {
 
 
 
-    constructor(id: number, title: string, imageUrls: string[], location?: string, purpose?: string, date?: string, concept?: string, createdAt?: string, updatedAt?: string, publishedAt?: string, locale?: string, type?: string) {
+    constructor(id: number, title: string, imageUrls: string[], thumbnailUrls: string[], location?: string, purpose?: string, date?: string, concept?: string, createdAt?: string, updatedAt?: string, publishedAt?: string, locale?: string, type?: string) {
         this.id = id;
         this.title = title;
         this.imageUrls = imageUrls ? imageUrls : [];
+        this.thumbnailUrls = thumbnailUrls ? thumbnailUrls : [];
         this.location = location;
         this.purpose = purpose;
         this.date = date;

@@ -59,13 +59,13 @@ export default function Project({ post }: { post: Post }) {
                         speed={500}
                         plugins={[lgThumbnail, lgZoom]}
                     >
-                        {
+                        {/* {
                             post.imageUrls.map((url) => (
                                 <a key={url} href={url}>
                                     <img src={url} className='img-fluid mb-2' alt={post.title} />
                                 </a>
                             ))
-                        }
+                        } */}
                     </LightGallery>
                 </div>
 
