@@ -15,7 +15,9 @@ export default function RedirectPage() {
     }, [router]);
     return (
         <>
-            <Spinner animation="grow" />
+        <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
+            <Spinner animation="grow" color='#212529' />
+        </div>
         </>
     )
 }

@@ -8,7 +8,7 @@ enum PostType {
 class Post {
     public id: number
     public title: string
-    public imageUrls: string[]
+    public imageUrls: any
     public location?: string
     public purpose?: string
     public date?: string

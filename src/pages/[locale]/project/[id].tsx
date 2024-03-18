@@ -17,7 +17,9 @@ export async function getStaticPaths() {
     const repository = new Repository()
     const paths = locales.flatMap((locale) => {
         repository.getAllPosts(locale).then(posts => {
-            return posts.map((post) => ({ params: { id: post.id.toString(), locale: locale } }))
+            console.log("posts: ", posts)
+            return posts ? posts.map((post) => ({ params: { id: post.id.toString(), locale: locale } }))
+                : []
         })
     })
     return { paths, fallback: false }

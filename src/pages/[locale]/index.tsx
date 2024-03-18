@@ -32,11 +32,15 @@ export default function Home(props :  {locale: string} ){
     const router = useRouter()
     const translation = new Intl();
     const t  = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);
-    const [posts, setPosts] = useState<Post[]>([])
+    const [architecturePosts, setArchitecturePosts] = useState<Post[]>([])
+    const [hydrotechnicsPosts, setHydrotechnicsPosts] = useState<Post[]>([])
 
     useEffect(() => {
-        repository.getAllPosts(props.locale).then(posts => {
-            setPosts(posts)
+        repository.getArchitecturalProjects(props.locale).then(posts => {
+            setArchitecturePosts(posts)
+        })
+        repository.getHydrotechnicalProjects(props.locale).then(posts => {
+            setHydrotechnicsPosts(posts)
         })
     }, [])
 
@@ -66,7 +70,7 @@ export default function Home(props :  {locale: string} ){
                 <div className='my-5'>
                     <h2 className='h2 text-dark'>{t("architecture")}</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
-                        {posts.map(post => (
+                        {architecturePosts.map(post => (
                             <Card key={post.id} post={post} onClick={() => navigateToProject(post.id)}/>
                         ))}
                     </div>
@@ -74,7 +78,7 @@ export default function Home(props :  {locale: string} ){
                 <div className='my-5'>
                     <h2 className='h2 text-dark'>{t("hydrotechnics")}</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
-                        {posts.map(post => (
+                        {hydrotechnicsPosts.map(post => (
                             <Card key={post.id} post={post} onClick={() => navigateToProject(post.id)}/>
                         ))}
                     </div>
