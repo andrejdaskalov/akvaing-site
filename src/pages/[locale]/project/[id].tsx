@@ -63,7 +63,7 @@ export default function Project(props: { id: number, locale: string }) {
                     <p className="text-dark fs-3 fw-normal">{t("project.date")}: {post.date}</p>
                     <p className="text-dark fs-3 fw-normal">{t("project.concept")}: {post.concept}</p>
                 </div>
-                <div className="col-md-6 image-row overflow-auto d-flex flex-column justify-items-start">
+                <div className="col-md-6 image-row overflow-auto ">
                     <LightGallery
                         speed={500}
                         plugins={[lgThumbnail, lgZoom]}

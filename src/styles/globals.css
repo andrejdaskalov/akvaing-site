@@ -92,11 +92,22 @@ main.special-scroll {
     /* overflow-y: scroll;
     overflow-x: hidden; */
 }
+.image-row {
+    padding-top: 1rem;
+}
 .image-row img{
     transition: all ease-in-out 0.2s;
+    width: 350px;
 }
 .image-row img:hover{
     transform: scale(1.1);
+}
+
+.image-row .lg-react-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
  /* main.special-scroll .image-row {
