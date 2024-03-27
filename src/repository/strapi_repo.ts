@@ -41,23 +41,25 @@ class Repository {
         }
     }
 
-    public getPostById(id: number, locale: string): Promise<Post | undefined> {
-        return axios.get(`/api/projects/${id}?locale=${locale}`)
-            .then(response => {
-                return response.data.data ? this.mapPost(response.data.data): undefined;
-            })
-            .catch(error => {
-                console.error(error);
-                return undefined;
-            });
+    public async getPostById(id: number, locale: string): Promise<Post | undefined> {
+        try {
+            const post = await axios.get(`/api/projects/${id.toString()}?locale=${locale}&populate[0]=ImageUrls`);
+            return post.data.data ? this.mapPost(post.data.data) : undefined;
+        } catch (error) {
+            console.error(error);
+            return undefined;
+        }
     }
 
     private mapPost(post: any): Post {
         return new Post(
             post.id,
             post.attributes.Title,
-            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.url),
-            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.thumbnail.url),
+            post.attributes.ImageUrls ? 
+            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.url) 
+            : [],
+            post.attributes.ImageUrls ? post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.thumbnail.url)
+            : [],
             post.attributes.Location,
             post.attributes.Purpose,
             post.attributes.Date,

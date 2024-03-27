@@ -1,10 +1,14 @@
 {
-    "company-name" : "АKVA-ING",
-    "architecture" : "Architecture",
-    "hydrotechnics" : "Hydrotechnics",
-    "nav.projects" : "PROJECTS",
-    "nav.contact" : "CONTACT",
-    "nav.about" : "ABOUT US",
-    "nav.mission" : "MISSION",
-    "nav.certificates" : "CERTIFICATES"
+    "company-name": "АKVA-ING",
+    "architecture": "ARCHITECTURE",
+    "hydrotechnics": "HYDROTECHNICS",
+    "nav.projects": "PROJECTS",
+    "nav.contact": "CONTACT",
+    "nav.about": "ABOUT US",
+    "nav.mission": "MISSION",
+    "nav.certificates": "CERTIFICATES",
+    "project.location": "LOCATION",
+    "project.purpose": "PURPOSE",
+    "project.date": "DATE",
+    "project.concept": "CONCEPT"
 }

@@ -2,7 +2,7 @@ import axios from 'axios';
 const api_key = process.env.API_KEY;
 const baseURL = process.env.STRAPI_URL;
 const instance = axios.create({
-    baseURL: 'http://localhost:1337',
+    baseURL: 'http://127.0.0.1:1337',
     headers: {
         // 'Access-Control-Allow-Origin': '*',
         'Accept' : 'application/json',

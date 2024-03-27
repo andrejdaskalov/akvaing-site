@@ -35,6 +35,7 @@ export default function Home(props :  {locale: string} ){
     const [architecturePosts, setArchitecturePosts] = useState<Post[]>([])
     const [hydrotechnicsPosts, setHydrotechnicsPosts] = useState<Post[]>([])
 
+    const locale = props.locale
     useEffect(() => {
         repository.getArchitecturalProjects(props.locale).then(posts => {
             setArchitecturePosts(posts)
@@ -42,7 +43,7 @@ export default function Home(props :  {locale: string} ){
         repository.getHydrotechnicalProjects(props.locale).then(posts => {
             setHydrotechnicsPosts(posts)
         })
-    }, [])
+    }, [locale])
 
 
 
