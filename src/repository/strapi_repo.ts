@@ -58,7 +58,8 @@ class Repository {
             post.attributes.ImageUrls ? 
             post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.url) 
             : [],
-            post.attributes.ImageUrls ? post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.thumbnail.url)
+            post.attributes.ImageUrls ? 
+            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.thumbnail.url)
             : [],
             post.attributes.Location,
             post.attributes.Purpose,

@@ -15,7 +15,7 @@ class Post {
     public date?: string
     public concept?: string
     public createdAt?: string
-    public updatedAt?: string 
+    public updatedAt?: string
     public publishedAt?: string
     public locale?: string
     public type?: PostType

@@ -63,15 +63,15 @@ export default function Project(props: { id: number, locale: string }) {
                     <p className="text-dark fs-3 fw-normal">{t("project.date")}: {post.date}</p>
                     <p className="text-dark fs-3 fw-normal">{t("project.concept")}: {post.concept}</p>
                 </div>
-                <div className="col-md-6 image-row overflow-auto">
+                <div className="col-md-6 image-row overflow-auto d-flex flex-column justify-items-start">
                     <LightGallery
                         speed={500}
                         plugins={[lgThumbnail, lgZoom]}
                     >
-                        {post.imageUrls ?
-                            post.imageUrls.map((url) => (
+                        {post.imageUrls && post.thumbnailUrls ?
+                            post.imageUrls.map((url, index) => (
                                 <a key={url} href={url}>
-                                    <img src={url} className='img-fluid mb-2' alt={post.title} />
+                                    <img src={post.thumbnailUrls[index]} className='img-fluid mb-2' alt={post.title} />
                                 </a>
                             ))
                             : null
