@@ -1,4 +1,4 @@
-import Intl from '../../../../i18n/intl'
+import Intl from '../../../i18n/intl'
 
 export async function getStaticPaths() {
     const locales = ['mk', 'en']

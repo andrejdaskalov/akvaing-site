@@ -7,7 +7,7 @@ import Repository from '../../repository/strapi_repo'
 import { useRouter } from 'next/router'
 import Post from '../../model/Post'
 import Card from '../../component/card'
-import Intl from '../../../i18n/intl'
+import Intl from '@/i18n/intl'
 import { useEffect, useState } from 'react'
 
 

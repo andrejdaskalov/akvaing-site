@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Intl from '../../i18n/intl'
+import Intl from '../i18n/intl'
 import Spinner from 'react-bootstrap/Spinner';
 
 

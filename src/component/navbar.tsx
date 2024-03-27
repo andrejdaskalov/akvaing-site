@@ -8,7 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { ButtonGroup, Container, NavDropdown, ToggleButton } from "react-bootstrap";
-import  Intl from "../../i18n/intl";
+import  Intl from "@/i18n/intl";
 
 
 

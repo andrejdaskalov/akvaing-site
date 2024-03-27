@@ -12,7 +12,7 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 
 import { useState, useEffect } from "react";
-import Intl from '../../../../i18n/intl'
+import Intl from '@/i18n/intl'
 
 
 export async function getStaticPaths() {
