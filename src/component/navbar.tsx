@@ -52,7 +52,7 @@ export default function AkvaingNavbar() {
 
 
             <Navbar expand={false} className="flex-column bg-dark fixed-left fixed-top  ">
-                <Container fluid className="d-flex flex-column align-items-center justify-content-start">
+                <Container fluid className="d-flex flex-column menu-icon-alignment justify-content-start">
                     <Button onClick={handleShow} style={{ backgroundColor: "transparent", padding: 0 }} >
                         <i className="bi bi-list" style={{ fontSize: "1.8rem" }}></i>
 

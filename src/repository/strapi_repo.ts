@@ -19,7 +19,7 @@ class Repository {
 
     public async getArchitecturalProjects(locale: string): Promise<Post[]> {
         try {
-            const response = await axios.get(`/api/projects?locale=${locale}&type=architecture&populate[0]=ImageUrls`);
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=architecture`);
             return response.data.data.map((post: any) => {
                 return this.mapPost(post);
             });
@@ -31,7 +31,7 @@ class Repository {
 
     public async getHydrotechnicalProjects(locale: string): Promise<Post[]> {
         try {
-            const response = await axios.get(`/api/projects?locale=${locale}&type=hydrotechnics&populate[0]=ImageUrls`);
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=hydro`);
             return response.data.data.map((post: any) => {
                 return this.mapPost(post);
             });
