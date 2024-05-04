@@ -8,7 +8,7 @@
     "nav.mission": "MISSION",
     "nav.certificates": "CERTIFICATES",
     "project.location": "LOCATION",
-    "project.purpose": "PURPOSE",
+    "project.purpose": "TYPE",
     "project.date": "DATE",
     "project.concept": "CONCEPT"
 }

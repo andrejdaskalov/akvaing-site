@@ -56,13 +56,14 @@ export default function Project(props: { id: number, locale: string }) {
 
                 <div className="col-md-1">
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-3 details-container">
                     <h1 className="fw-bold mb-5">{post.title}</h1>
-                    <p className="text-dark fs-3 fw-normal">{t("project.location")}: {post.location}</p>
-                    <p className="text-dark fs-3 fw-normal">{t("project.purpose")}: {post.purpose}</p>
-                    <p className="text-dark fs-3 fw-normal">{t("project.date")}: {post.date}</p>
-                    <p className="text-dark fs-3 fw-normal">{t("project.concept")}: {post.concept}</p>
+                    <p className="text-dark fs-5 fw-normal">{t("project.location")}: {post.location}</p>
+                    <p className="text-dark fs-5 fw-normal">{t("project.purpose")}: {post.purpose}</p>
+                    <p className="text-dark fs-5 fw-normal">{t("project.date")}: {post.date?.slice(0,4)}</p>
+                    <p className="text-dark fs-5 fw-normal">{t("project.concept")}: {post.concept}</p>
                 </div>
+                <div className="col-md-2"/>
                 <div className="col-md-6 image-row overflow-auto ">
                     <LightGallery
                         speed={500}
@@ -71,7 +72,7 @@ export default function Project(props: { id: number, locale: string }) {
                         {post.imageUrls && post.thumbnailUrls ?
                             post.imageUrls.map((url, index) => (
                                 <a key={url} href={url}>
-                                    <img src={post.thumbnailUrls[index]} className='img-fluid mb-2' alt={post.title} />
+                                    <img src={post.thumbnailUrls[index]} className='img-fluid mb-2 details-image-thumb' alt={post.title} />
                                 </a>
                             ))
                             : null

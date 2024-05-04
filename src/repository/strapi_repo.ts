@@ -52,6 +52,7 @@ class Repository {
     }
 
     private mapPost(post: any): Post {
+        console.log(post);
         return new Post(
             post.id,
             post.attributes.Title,
@@ -59,7 +60,7 @@ class Repository {
             post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.url) 
             : [],
             post.attributes.ImageUrls ? 
-            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.thumbnail.url)
+            post.attributes.ImageUrls.data.map((image: any) => this.baseURL + image.attributes.formats.small?.url)
             : [],
             post.attributes.Location,
             post.attributes.Purpose,
