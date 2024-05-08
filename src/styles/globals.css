@@ -97,7 +97,9 @@ main.special-scroll {
 }
 .image-row img{
     transition: all ease-in-out 0.2s;
-    width: 350px;
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
 }
 .image-row img:hover{
     transform: scale(1.1);

@@ -68,6 +68,7 @@ export default function Project(props: { id: number, locale: string }) {
                     <LightGallery
                         speed={500}
                         plugins={[lgThumbnail, lgZoom]}
+                        download={false}
                     >
                         {post.imageUrls && post.thumbnailUrls ?
                             post.imageUrls.map((url, index) => (

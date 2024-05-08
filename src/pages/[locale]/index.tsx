@@ -34,6 +34,8 @@ export default function Home(props :  {locale: string} ){
     const t  = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);
     const [architecturePosts, setArchitecturePosts] = useState<Post[]>([])
     const [hydrotechnicsPosts, setHydrotechnicsPosts] = useState<Post[]>([])
+    const [interiorPosts, setInteriorPosts] = useState<Post[]>([])
+    const [urbanPlanningPosts, setUrbanPlanningPosts] = useState<Post[]>([])
 
     const locale = props.locale
     useEffect(() => {
@@ -42,6 +44,12 @@ export default function Home(props :  {locale: string} ){
         })
         repository.getHydrotechnicalProjects(props.locale).then(posts => {
             setHydrotechnicsPosts(posts)
+        })
+        repository.getInteriorProjects(props.locale).then(posts => {
+            setInteriorPosts(posts)
+        })
+        repository.getUrbanPlanningProjects(props.locale).then(posts => {
+            setUrbanPlanningPosts(posts)
         })
     }, [locale])
 
@@ -80,6 +88,22 @@ export default function Home(props :  {locale: string} ){
                     <h2 className='h2 text-dark'>{t("hydrotechnics")}</h2>
                     <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
                         {hydrotechnicsPosts.map(post => (
+                            <Card key={post.id} post={post} onClick={() => navigateToProject(post.id)}/>
+                        ))}
+                    </div>
+                </div>
+                <div className='my-5'>
+                    <h2 className='h2 text-dark'>{t("interior")}</h2>
+                    <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
+                        {interiorPosts.map(post => (
+                            <Card key={post.id} post={post} onClick={() => navigateToProject(post.id)}/>
+                        ))}
+                    </div>
+                </div>
+                <div className='my-5'>
+                    <h2 className='h2 text-dark'>{t("urban-planning")}</h2>
+                    <div className='card-container d-flex flex-row justify-content-start overflow-auto'>
+                        {urbanPlanningPosts.map(post => (
                             <Card key={post.id} post={post} onClick={() => navigateToProject(post.id)}/>
                         ))}
                     </div>

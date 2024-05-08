@@ -1,7 +1,9 @@
 {
     "company-name" : "АКВА-ИНГ",
     "architecture" : "АРХИТЕКТУРА",
-    "hydrotechnics" : "ХИДРОТЕХНИКА",
+    "hydrotechnics" : "ГРАДЕЖНИШТВО & ХИДРОТЕХНИКА",
+    "urban-planning" : "УРБАНИЗАМ",
+    "interior" : "ВНАТРЕШНО УРЕДУВАЊЕ",
     "nav.projects" : "ПРОЕКТИ",
     "nav.contact" : "КОНТАКТ",
     "nav.about" : "ЗА НАС",

@@ -41,6 +41,30 @@ class Repository {
         }
     }
 
+    public async getInteriorProjects(locale: string): Promise<Post[]> {
+        try {
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=interior`);
+            return response.data.data.map((post: any) => {
+                return this.mapPost(post);
+            });
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    }
+
+    public async getUrbanPlanningProjects(locale: string): Promise<Post[]> {
+        try {
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=urban`);
+            return response.data.data.map((post: any) => {
+                return this.mapPost(post);
+            });
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    }
+
     public async getPostById(id: number, locale: string): Promise<Post | undefined> {
         try {
             const post = await axios.get(`/api/projects/${id.toString()}?locale=${locale}&populate[0]=ImageUrls`);
