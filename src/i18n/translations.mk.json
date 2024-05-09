@@ -12,6 +12,17 @@
     "project.location" : "ЛОКАЦИЈА",
     "project.purpose" : "НАМЕНА",
     "project.date" : "ДАТУМ",
-    "project.concept" : "ОПИС"
+    "project.concept": "ОПИС",
+    "contact.address-label": "АДРЕСА: ",
+    "contact.address1": "Пиринска 148а, Штип 2000",
+    "contact.address2": "Булевар Кузман Јосифовски Питу 19/4, Скопје 1000",
+    "contact.phone1-label": "ТЕЛ 1: ",
+    "contact.phone2-label": "ТЕЛ 2: ",
+    "contact.email": "Е-МАИЛ: ",
+    "contact.working-hours": "РАБОТНО ВРЕМЕ: ",
+    "contact.title": "КОНТАКТИРАЈ НЕ",
+    "contact.skopje": "Скопје",
+    "contact.stip": "Штип",
+    "contact.location": "Локација"
 
 }

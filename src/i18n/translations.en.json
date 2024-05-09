@@ -12,5 +12,18 @@
     "project.location": "LOCATION",
     "project.purpose": "TYPE",
     "project.date": "DATE",
-    "project.concept": "CONCEPT"
+    "project.concept": "CONCEPT",
+    "contact.address-label": "ADDRESS: ",
+    "contact.address1": "Pirinska 148а, Stip 2000",
+    "contact.address2": "Boulevard Kuzman Josifovski Pitu 19/4, Skopje 1000",
+    "contact.phone1": "PHONE 1: ",
+    "contact.phone2": "PHONE 2: ",
+    "contact.email": "EMAIL: ",
+    "contact.working-hours": "WORKING HOURS: ",
+    "contact.title": "CONTACT US",
+    "contact.skopje": "Skopje",
+    "contact.stip": "Stip",
+    "contact.location": "LOCATION"
+
+
 }
