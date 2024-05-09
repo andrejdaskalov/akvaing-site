@@ -1,12 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import Navbar from '@/component/navbar'
 import Repository from '../../repository/strapi_repo'
 import { useRouter } from 'next/router'
 import Post from '../../model/Post'
-import Card from '../../component/card'
 import Intl from '@/i18n/intl'
 import { useEffect, useState } from 'react'
 import ProjectScroll from '@/component/project_scroll'
@@ -15,20 +10,16 @@ import ProjectScroll from '@/component/project_scroll'
 export async function getStaticPaths() {
     const locales = ['mk', 'en']
     const paths = locales.map((locale) => ({ params: { locale: locale }}))
-    console.log("paths: ", paths)
     return { paths, fallback: false}
 }
 
 export async function getStaticProps({ params }: { params: { locale : string }}) {
     const locale = params.locale
-    console.log("locale: ", locale)
     return { props: { locale: locale } }
 }
 
 
 export default function Home(props :  {locale: string} ){
-    console.log("props: ", props)
-
     const repository = new Repository()
     const router = useRouter()
     const translation = new Intl();

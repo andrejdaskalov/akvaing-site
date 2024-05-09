@@ -15,6 +15,7 @@ const ProjectScroll = (props: {
         if (scrollRef.current === null || scrollRef.current === undefined) return;
         const scrollWidth = scrollRef.current?.scrollWidth || 0;
         const clientWidth = scrollRef.current?.clientWidth || 0;
+        console.log('scrollWidth: ', scrollWidth);
         if (toRight && scrollPosition + clientWidth + scrollAmount > scrollWidth) {
             if (scrollPosition + clientWidth + scrollAmount == Number.POSITIVE_INFINITY) {
                 setScrollPosition(0);
@@ -45,10 +46,12 @@ const ProjectScroll = (props: {
     }
 
     useEffect(() => {
-        if (scrollRef.current !== null && scrollRef.current !== undefined && scrollRef.current.scrollWidth > scrollRef.current.clientWidth) {
+        if (scrollRef.current !== null && scrollRef.current !== undefined && scrollRef.current?.scrollWidth > scrollRef.current?.clientWidth) {
             setShowButtons(true);
+        } else {
+            setShowButtons(false);
         }
-    }, [scrollRef.current]);
+    }, [scrollRef.current?.scrollWidth, scrollRef.current?.clientWidth]);
 
     useEffect(() => {
         scrollRef?.current?.addEventListener('scroll', () => {

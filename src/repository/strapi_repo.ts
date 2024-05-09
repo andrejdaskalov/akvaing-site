@@ -76,7 +76,6 @@ class Repository {
     }
 
     private mapPost(post: any): Post {
-        console.log(post);
         return new Post(
             post.id,
             post.attributes.Title,
