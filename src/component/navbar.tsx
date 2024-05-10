@@ -78,10 +78,10 @@ export default function AkvaingNavbar() {
                                     style={{ transition: "all ease-in-out 0.3s" }}
                                 >
                                     <NavDropdown.Item >
-                                        <Nav.Link href={"/" + locale + "/zanas"} onClick={handleClose} className="nav-link">{t("nav.zanas")}</Nav.Link>
+                                        <Link href={"/" + locale + "/zanas"} onClick={handleClose} className="nav-link">{t("nav.zanas")}</Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item >
-                                        <Nav.Link href={"/" + locale + "/certificates"} onClick={handleClose} className="nav-link">{t("nav.certificates")}</Nav.Link>
+                                        <Link href={"/" + locale + "/certificates"} onClick={handleClose} className="nav-link">{t("nav.certificates")}</Link>
                                     </NavDropdown.Item>
                                     {/* <NavDropdown.Item >
                                         <Nav.Link href="/zanas" onClick={handleClose} className="nav-link">ДЕЈНОСТ</Nav.Link>

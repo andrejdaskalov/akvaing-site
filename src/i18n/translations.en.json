@@ -7,7 +7,7 @@
     "nav.projects": "PROJECTS",
     "nav.contact": "CONTACT",
     "nav.about": "ABOUT US",
-    "nav.zanas": "MISSION",
+    "nav.zanas": "WHAT WE DO",
     "nav.certificates": "CERTIFICATES",
     "project.location": "LOCATION",
     "project.purpose": "TYPE",
@@ -23,7 +23,10 @@
     "contact.title": "CONTACT US",
     "contact.skopje": "Skopje",
     "contact.stip": "Stip",
-    "contact.location": "LOCATION"
+    "contact.location": "LOCATION",
+    "zanas.text": "Akva-Ing is a private company, formed 1995 in Stip, Republic of Macedonia. It was started in the area of hydrotechnics, design and engineering water supply systems, irrigation, treatment of waters, pools and fountains.\nServices we offer:\n-Architecture\n-Construction\n-Hydrotechnics -Environmental reports\n-Supervision\nIn our list of finished projects we have a variety of clientelle, from individuals and private companies to municipalities and projects of state importance.\nWith the increase of experience, as well as the increase of our staff and client demand, we have increased our area of work to the level of the entire country\nWe expanded to architecture, designing houses, buildings, as well as major road infrastructure\nOur employeess and partners are tried and tested in their respective fields and ready to take on any challenge the client can give. Our field of work is oriented towards consulting, design and supervision",
+    "zanas.title": "WHAT WE DO",
+    "certificates.title": "CERTIFICATES"
 
 
 }
