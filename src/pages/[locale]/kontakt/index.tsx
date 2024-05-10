@@ -36,7 +36,7 @@ const Kontakt = (props: Props) => {
 
                 </div>
                 <div className="col-md-2" />
-                <div className="col-md-6 image-row overflow-auto details-container">
+                <div className="col-md-6  details-container">
                     <h2 className="fw-normal mb-5">{t("contact.location")}</h2>
 
                     <ButtonGroup className='mb-3'>
@@ -58,9 +58,9 @@ const Kontakt = (props: Props) => {
                         ))}
                     </ButtonGroup>
                     {selectedLocation === Location.Skopje ?
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.5561121921605!2d21.44925837611686!3d41.988339271230004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415a61efd3e25%3A0x2bb0e577f8bb865b!2sAkva-Ing%20Architecture!5e0!3m2!1sen!2smk!4v1715294052007!5m2!1sen!2smk" width="600" height="450" style={{ border: 0, borderRadius: "10px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe className='map-iframe' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.5561121921605!2d21.44925837611686!3d41.988339271230004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415a61efd3e25%3A0x2bb0e577f8bb865b!2sAkva-Ing%20Architecture!5e0!3m2!1sen!2smk!4v1715294052007!5m2!1sen!2smk" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                         :
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2976.9158566553533!2d22.193058976104354!3d41.74390777125684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1355dd56430e9965%3A0x3048caa83f947321!2sAkva-Ing!5e0!3m2!1sen!2smk!4v1715294276606!5m2!1sen!2smk" width="600" height="450" style={{ border: 0, borderRadius: "10px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)" }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe className='map-iframe' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2976.9158566553533!2d22.193058976104354!3d41.74390777125684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1355dd56430e9965%3A0x3048caa83f947321!2sAkva-Ing!5e0!3m2!1sen!2smk!4v1715294276606!5m2!1sen!2smk"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     }
 
 
