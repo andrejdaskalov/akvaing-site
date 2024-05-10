@@ -19,7 +19,7 @@ class Repository {
 
     public async getArchitecturalProjects(locale: string): Promise<Post[]> {
         try {
-            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=architecture&sort[1]=priority:desc`);
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=architecture&sort[0]=priority:desc`);
             return response.data.data.map((post: any) => {
                 return this.mapPost(post);
             });
@@ -31,7 +31,7 @@ class Repository {
 
     public async getHydrotechnicalProjects(locale: string): Promise<Post[]> {
         try {
-            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=hydro&sort[1]=priority:desc`);
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=hydro&sort[0]=priority:desc`);
             return response.data.data.map((post: any) => {
                 return this.mapPost(post);
             });
@@ -43,7 +43,7 @@ class Repository {
 
     public async getInteriorProjects(locale: string): Promise<Post[]> {
         try {
-            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=interior&sort[1]=priority:desc`);
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=interior&sort[0]=priority:desc`);
             return response.data.data.map((post: any) => {
                 return this.mapPost(post);
             });
@@ -55,7 +55,7 @@ class Repository {
 
     public async getUrbanPlanningProjects(locale: string): Promise<Post[]> {
         try {
-            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=urban&sort[1]=priority:desc`);
+            const response = await axios.get(`/api/projects?locale=${locale}&populate[0]=ImageUrls&filters[type][$eq]=urban&sort[0]=priority:desc`);
             return response.data.data.map((post: any) => {
                 return this.mapPost(post);
             });
