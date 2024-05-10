@@ -89,6 +89,16 @@ class Repository {
         }
     }
 
+    public async getAboutUs(locale: string): Promise<string> {
+        try {
+            const response = await axios.get(`/api/about-us?locale=${locale}`);
+            return response.data.data.attributes.content;
+        } catch (error) {
+            console.error(error);
+            return "";
+        }
+    }
+
     private mapPost(post: any): Post {
         return new Post(
             post.id,
