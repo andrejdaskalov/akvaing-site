@@ -13,6 +13,7 @@ import lgZoom from 'lightgallery/plugins/zoom';
 
 import { useState, useEffect } from "react";
 import Intl from '@/i18n/intl'
+import { Spinner } from "react-bootstrap";
 
 
 export async function getStaticPaths() {
@@ -44,11 +45,13 @@ export default function Project(props: { id: number, locale: string }) {
         })
     }, [])
 
-    const translation = new Intl(); 
+    const translation = new Intl();
     const t = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);
 
 
-    if (!post) return <h1>Post not found</h1>
+    if (!post) return <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+        <Spinner animation="grow" color='#212529' />
+    </div>
     return (
         <main className="special-scroll">
 
@@ -60,10 +63,10 @@ export default function Project(props: { id: number, locale: string }) {
                     <h1 className="fw-bold mb-5">{post.title}</h1>
                     <p className="text-dark fs-5 fw-normal">{t("project.location")}: {post.location}</p>
                     <p className="text-dark fs-5 fw-normal">{t("project.purpose")}: {post.purpose}</p>
-                    <p className="text-dark fs-5 fw-normal">{t("project.date")}: {post.date?.slice(0,4)}</p>
+                    <p className="text-dark fs-5 fw-normal">{t("project.date")}: {post.date?.slice(0, 4)}</p>
                     <p className="text-dark fs-5 fw-normal">{t("project.concept")}: {post.concept}</p>
                 </div>
-                <div className="col-md-2"/>
+                <div className="col-md-2" />
                 <div className="col-md-6 image-row overflow-auto ">
                     <LightGallery
                         speed={500}
