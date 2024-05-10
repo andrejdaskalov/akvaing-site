@@ -3,13 +3,11 @@ import Intl from '../../../i18n/intl'
 export async function getStaticPaths() {
     const locales = ['mk', 'en']
     const paths = locales.map((locale) => ({ params: { locale: locale }}))
-    console.log("paths: ", paths)
     return { paths, fallback: false}
 }
 
 export async function getStaticProps({ params }: { params: { locale : string }}) {
     const locale = params.locale
-    console.log("locale: ", locale)
     return { props: { locale: locale } }
 }
 
