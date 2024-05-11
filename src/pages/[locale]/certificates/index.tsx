@@ -10,6 +10,7 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import Intl from '../../../i18n/intl'
 import Repository from '@/repository/strapi_repo'
 import { useEffect, useState } from 'react'
+import Head from 'next/head';
 
 export async function getStaticPaths() {
     const locales = ['mk', 'en']
@@ -33,24 +34,30 @@ export default function Certificates(props: { locale: string }) {
         })
     }, [])
     return (
-        <main className='p-3'>
-            <h1 className="fw-bold mb-5">{t("certificates.title")}</h1>
-            <div className='container flex-row flex-wrap justify-content-start'>
-                <LightGallery
-                    speed={500}
-                    plugins={[lgThumbnail, lgZoom]}
-                    download={false}
-                >
-                    {certificates.length > 0 ?
-                        certificates.map((url, index) => (
-                            <a key={url} href={url} style={{width:"250px", height:"400px", objectFit:"contain"}} className='me-3'>
-                                <img src={url} className='img-fluid mb-2 ' alt="" style={{width:"250px", height:"400px",}}/>
-                            </a>
-                        ))
-                        : null
-                    }
-                </LightGallery>
-            </div>
-        </main>
+        <>
+            <Head>
+                <title>{t("company-name") + " - " + t("certificates.title")}</title>
+                <meta name="google-site-verification" content="oadKBr5R6v8YjRhVmkphhjfjfJ5nz3tSBD4shhfNNoc" />
+            </Head>
+            <main className='p-3'>
+                <h1 className="fw-bold mb-5">{t("certificates.title")}</h1>
+                <div className='container flex-row flex-wrap justify-content-start'>
+                    <LightGallery
+                        speed={500}
+                        plugins={[lgThumbnail, lgZoom]}
+                        download={false}
+                    >
+                        {certificates.length > 0 ?
+                            certificates.map((url, index) => (
+                                <a key={url} href={url} style={{ width: "250px", height: "400px", objectFit: "contain" }} className='me-3'>
+                                    <img src={url} className='img-fluid mb-2 ' alt="" style={{ width: "250px", height: "400px", }} />
+                                </a>
+                            ))
+                            : null
+                        }
+                    </LightGallery>
+                </div>
+            </main>
+        </>
     )
 }
