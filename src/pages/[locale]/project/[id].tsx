@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import Intl from '@/i18n/intl'
 import { Spinner } from "react-bootstrap";
 import Head from "next/head";
+import { downloadFile } from "@/service/image_download_service";
 
 
 export async function getStaticPaths() {
@@ -22,29 +23,31 @@ export async function getStaticPaths() {
     const repository = new Repository()
     const paths: { params: { id: string, locale: string } }[] = []
     for (let locale of locales) {
-        let posts = await repository.getAllPosts(locale);
+    let posts = await repository.getAllPosts(locale);
         posts.forEach((post) => {
             paths.push({ params: { id: post.id.toString(), locale: locale } })
         })
     }
-    console.log("paths: ", paths)
     return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }: { params: { id: number, locale: string } }) {
-    return { props: { id: params.id, locale: params.locale } }
+    const repository = new Repository();
+    let post = await repository.getPostById(params.id, params.locale);
+    return { props: { id: params.id, locale: params.locale, post: post?.toJson() } }
 }
 
 
-export default function Project(props: { id: number, locale: string }) {
-    const repository = new Repository()
-    const [post, setPost] = useState<Post | undefined>(undefined)
+export default function Project(props: { id: number, locale: string, post: any}) {
+    // const repository = new Repository()
+    // const [post, setPost] = useState<Post | undefined>(undefined)
 
-    useEffect(() => {
-        repository.getPostById(props.id, props.locale).then(post => {
-            setPost(post)
-        })
-    }, [])
+    // useEffect(() => {
+    //     repository.getPostById(props.id, props.locale).then(post => {
+    //         setPost(post)
+    //     })
+    // }, [])
+    const post = Post.fromJson(props.post);
 
     const translation = new Intl();
     const t = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);

@@ -11,19 +11,23 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { locale: string } }) {
     const locale = params.locale
-    return { props: { locale: locale } }
+    const repository = new Repository();
+    const content = await repository.getAboutUs(locale);
+    return { props: { locale: locale, content: content } }
 }
 
-export default function ZaNas(props: { locale: string }) {
+export default function ZaNas(props: { locale: string, content: string}) {
     const translation = new Intl();
     const t = (key: string) => translation.getTranslation(props.locale ? props.locale : 'mk', key);
-    const repository = new Repository();
-    const [content, setContent] = useState<string>("");
-    useEffect(() => {
-        repository.getAboutUs(props.locale).then(content => {
-            setContent(content)
-        })
-    }, [])
+    // const repository = new Repository();
+    // const [content, setContent] = useState<string>("");
+    // useEffect(() => {
+    //     repository.getAboutUs(props.locale).then(content => {
+    //         setContent(content)
+    //     })
+    // }, [])
+
+    const content = props.content;
 
     return (
         <>

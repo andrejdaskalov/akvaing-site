@@ -78,9 +78,7 @@ class Repository {
     public async getCertificates(): Promise<string[]> {
         try {
             const response = await axios.get(`/api/certificates?populate[0]=images`);
-            console.log(response);
             return response.data.data.attributes.images.data.map((certificate: any) => {
-                console.log("certificate: ", certificate);
                 return this.baseURL + certificate.attributes.url;
             });
         } catch (error) {

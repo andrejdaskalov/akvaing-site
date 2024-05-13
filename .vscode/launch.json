@@ -13,6 +13,16 @@
                 "export"
             ],
             "console": "integratedTerminal"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Next.js Dev",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/next",
+            "runtimeArgs": [
+                "dev"
+            ],
+            "console": "integratedTerminal"
         }
     ]
 }

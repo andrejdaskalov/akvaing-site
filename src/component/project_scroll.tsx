@@ -15,7 +15,6 @@ const ProjectScroll = (props: {
         if (scrollRef.current === null || scrollRef.current === undefined) return;
         const scrollWidth = scrollRef.current?.scrollWidth || 0;
         const clientWidth = scrollRef.current?.clientWidth || 0;
-        console.log('scrollWidth: ', scrollWidth);
         if (toRight && scrollPosition + clientWidth + scrollAmount > scrollWidth) {
             if (scrollPosition + clientWidth + scrollAmount == Number.POSITIVE_INFINITY) {
                 setScrollPosition(0);

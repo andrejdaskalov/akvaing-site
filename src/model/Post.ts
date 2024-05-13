@@ -37,5 +37,27 @@ class Post {
         this.locale = locale;
         this.type = type as PostType;
     }
+
+    public static fromJson(json: any): Post {
+        return new Post(json.id, json.title, json.imageUrls, json.thumbnailUrls, json.location, json.purpose, json.date, json.concept, json.createdAt, json.updatedAt, json.publishedAt, json.locale, json.type);
+    }
+
+    public toJson(): any {
+        return {
+            id: this.id,
+            title: this.title,
+            imageUrls: this.imageUrls,
+            thumbnailUrls: this.thumbnailUrls,
+            location: this.location,
+            purpose: this.purpose,
+            date: this.date,
+            concept: this.concept,
+            createdAt: this.createdAt,
+            updatedAt: this.updatedAt,
+            publishedAt: this.publishedAt,
+            locale: this.locale,
+            type: this.type
+        }
+    }
 }
 export default Post;
