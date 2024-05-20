@@ -15,7 +15,6 @@ import { useState, useEffect } from "react";
 import Intl from '@/i18n/intl'
 import { Spinner } from "react-bootstrap";
 import Head from "next/head";
-import { downloadFile } from "@/service/image_download_service";
 
 
 export async function getStaticPaths() {
