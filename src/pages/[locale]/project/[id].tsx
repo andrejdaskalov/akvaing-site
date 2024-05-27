@@ -32,20 +32,26 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { id: number, locale: string } }) {
     const repository = new Repository();
-    let post = await repository.getPostById(params.id, params.locale);
+    var post = await repository.getPostById(params.id, params.locale);
+    if (!post) return { notFound: true };
+    // var newThumbnailUrls: string[] = [];
+    // var newImageUrls: string[] = [];
+    // for (let url of post?.thumbnailUrls || []) {
+    //     let filename = '/images/' + url.split('/').pop();
+    //     newThumbnailUrls.push(filename);
+    // }
+    // for (let url of post?.imageUrls || []) {
+    //     let filename = '/images/' + url.split('/').pop();
+    //     console.log("changing filename:", filename);
+    //     newImageUrls.push(filename);
+    // }
+    
+    // post = post?.copyWith({ thumbnailUrls: newThumbnailUrls, imageUrls: newImageUrls });
     return { props: { id: params.id, locale: params.locale, post: post?.toJson() } }
 }
 
 
 export default function Project(props: { id: number, locale: string, post: any}) {
-    // const repository = new Repository()
-    // const [post, setPost] = useState<Post | undefined>(undefined)
-
-    // useEffect(() => {
-    //     repository.getPostById(props.id, props.locale).then(post => {
-    //         setPost(post)
-    //     })
-    // }, [])
     const post = Post.fromJson(props.post);
 
     const translation = new Intl();

@@ -59,5 +59,17 @@ class Post {
             type: this.type
         }
     }
+
+    public copyWith({ id, title, imageUrls, thumbnailUrls, location, purpose, date, concept, createdAt, updatedAt, publishedAt, locale, type }: { id?: number, title?: string, imageUrls?: string[], thumbnailUrls?: string[], location?: string, purpose?: string, date?: string, concept?: string, createdAt?: string, updatedAt?: string, publishedAt?: string, locale?: string, type?: string }): Post {
+        return new Post(id ? id : this.id, title ? title : this.title, imageUrls ? imageUrls : this.imageUrls, thumbnailUrls ? thumbnailUrls : this.thumbnailUrls, location ? location : this.location, purpose ? purpose : this.purpose, date ? date : this.date, concept ? concept : this.concept, createdAt ? createdAt : this.createdAt, updatedAt ? updatedAt : this.updatedAt, publishedAt ? publishedAt : this.publishedAt, locale ? locale : this.locale, type ? type : this.type);
+    }
+
+    public static fromJsonArray(json: any): Post[] {
+        return json.map((post: any) => Post.fromJson(post));
+    }
+
+    public static toJsonArray(posts: Post[]): any[] {
+        return posts.map((post: Post) => post.toJson());
+    }
 }
 export default Post;

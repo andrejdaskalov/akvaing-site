@@ -102,10 +102,10 @@ class Repository {
             post.id,
             post.attributes.Title,
             post.attributes.ImageUrls ? 
-            post.attributes.ImageUrls.data?.map((image: any) => this.baseURL + image.attributes.url) 
+            post.attributes.ImageUrls.data?.map((image: any) => '/images/' + image.attributes.url.toString().split('/').pop()) 
             : [],
             post.attributes.ImageUrls ? 
-            post.attributes.ImageUrls.data?.map((image: any) => this.baseURL + image.attributes.formats.small?.url)
+            post.attributes.ImageUrls.data?.map((image: any) => '/images/'  + image.attributes.formats.small?.url.toString().split('/').pop())
             : [],
             post.attributes.Location,
             post.attributes.Purpose,
