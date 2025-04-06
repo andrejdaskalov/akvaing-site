@@ -79,7 +79,7 @@ class Repository {
         try {
             const response = await axios.get(`/api/certificates?populate[0]=images`);
             return response.data.data.attributes.images.data.map((certificate: any) => {
-                return this.baseURL + certificate.attributes.url;
+                return '/images/' + certificate.attributes.url;
             });
         } catch (error) {
             console.error(error);
@@ -101,12 +101,12 @@ class Repository {
         return new Post(
             post.id,
             post.attributes.Title,
-            post.attributes.ImageUrls ? 
-            post.attributes.ImageUrls.data?.map((image: any) => '/images/' + image.attributes.url.toString().split('/').pop()) 
-            : [],
-            post.attributes.ImageUrls ? 
-            post.attributes.ImageUrls.data?.map((image: any) => '/images/'  + image.attributes.formats.small?.url.toString().split('/').pop())
-            : [],
+            post.attributes.ImageUrls ?
+                post.attributes.ImageUrls.data?.map((image: any) => '/images/' + image.attributes.url.toString().split('/').pop())
+                : [],
+            post.attributes.ImageUrls ?
+                post.attributes.ImageUrls.data?.map((image: any) => '/images/' + image.attributes.formats.small?.url.toString().split('/').pop())
+                : [],
             post.attributes.Location,
             post.attributes.Purpose,
             post.attributes.Date,

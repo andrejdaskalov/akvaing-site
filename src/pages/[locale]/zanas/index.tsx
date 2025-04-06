@@ -11,9 +11,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { locale: string } }) {
     const locale = params.locale
-    const repository = new Repository();
-    const content = await repository.getAboutUs(locale);
-    return { props: { locale: locale, content: content } }
+    // const repository = new Repository();
+    // const content = await repository.getAboutUs(locale);
+    // return { props: { locale: locale, content: content } }
+    return { props: { locale: locale } }
 }
 
 export default function ZaNas(props: { locale: string, content: string}) {
@@ -44,7 +45,7 @@ export default function ZaNas(props: { locale: string, content: string}) {
                     </div>
                     <div className="col-md-6 details-container">
                         <h1 className="fw-bold mb-5">{t("zanas.title")}</h1>
-                        <p className="text-dark fs-5 fw-bold" style={{ whiteSpace: "pre-line" }}>{content} </p>
+                        <p className="text-dark fs-5 fw-bold" style={{ whiteSpace: "pre-line" }}>{t("zanas.text")} </p>
 
                     </div>
                     {/* <div className="col-md-2" />

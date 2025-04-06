@@ -32,7 +32,7 @@ const Kontakt = (props: Props) => {
             <Head>
                 <title>{t("company-name") + " - " + t("certificates.title")}</title>
                 <meta name="google-site-verification" content="oadKBr5R6v8YjRhVmkphhjfjfJ5nz3tSBD4shhfNNoc" />
-                <meta name='description' content={t("contact.description")}/>
+                <meta name='description' content={t("contact.description")} />
             </Head>
             <main className="special-scroll">
 
@@ -43,7 +43,7 @@ const Kontakt = (props: Props) => {
                     <div className="col-md-3 details-container">
                         <h1 className="fw-bold mb-5">{t("contact.title")}</h1>
                         <p className="text-dark fs-5 fw-bold">{t("contact.skopje")} </p>
-                        <p className="text-dark fs-5 fw-normal">{t("contact.address-label")}{t("contact.address2")}</p>
+                        {/*<p className="text-dark fs-5 fw-normal">{t("contact.address-label")}{t("contact.address2")}</p> */}
                         <p className="text-dark fs-5 fw-normal">{t("contact.email")}<a href='mailto:blagoj@akvaing.mk'>blagoj@akvaing.mk</a></p>
                         <p className="text-dark fs-5 fw-normal pb-2">{t("contact.phone1-label")}+389 78 300 129</p>
 
